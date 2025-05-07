@@ -39,22 +39,53 @@
     .gallery {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 15px;
       justify-content: center;
     }
 
-    .gallery img {
-      width: 45%;
-      max-width: 180px;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    .card {
+      position: relative;
+      width: 200px;
+      height: 250px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      overflow: hidden;
+      transform: rotate(-3deg);
       transition: transform 0.3s;
     }
 
-    .gallery img:hover {
-      transform: scale(1.05);
+    .card:nth-child(even) {
+      transform: rotate(3deg);
+    }
+
+    .card:hover {
+      transform: rotate(0deg) scale(1.05);
+      z-index: 2;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 10px solid #ffccdd;
+      border-radius: 20px;
+    }
+
+    .card::before, .card::after {
+      content: "💖";
+      position: absolute;
+      font-size: 1.2em;
+    }
+
+    .card::before {
+      top: 10px;
+      left: 10px;
+    }
+
+    .card::after {
+      bottom: 10px;
+      right: 10px;
     }
 
     .letter {
@@ -106,7 +137,6 @@
       font-size: 0.9em;
     }
 
-    /* CSS Heart Animation */
     .hearts {
       position: fixed;
       top: 0;
@@ -161,7 +191,6 @@
       }
     }
 
-    /* Responsive text sizes */
     @media (max-width: 600px) {
       h1 {
         font-size: 2em;
@@ -169,16 +198,19 @@
       .letter {
         font-size: 1em;
       }
-      .gallery img {
-        width: 80%;
-        max-width: 300px;
+      .gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        width: 90%;
+        height: auto;
       }
     }
   </style>
 </head>
 <body>
 
-<!-- Hearts -->
 <div class="hearts">
   <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
   <div class="heart" style="left: 25%; animation-delay: 2s;"></div>
@@ -195,10 +227,10 @@
 <section>
   <h2>📸 Our Memories</h2>
   <div class="gallery">
-    <img src="https://placekitten.com/300/300" alt="Photo 1">
-    <img src="https://placekitten.com/301/301" alt="Photo 2">
-    <img src="https://placekitten.com/302/302" alt="Photo 3">
-    <!-- Replace with your Google Drive direct links -->
+    <div class="card"><img src="https://placekitten.com/300/300" alt="Photo 1"></div>
+    <div class="card"><img src="https://placekitten.com/301/301" alt="Photo 2"></div>
+    <div class="card"><img src="https://placekitten.com/302/302" alt="Photo 3"></div>
+    <!-- Add more .card elements with your own images -->
   </div>
 </section>
 
