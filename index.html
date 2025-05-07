@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Happy Birthday, My Love 💖</title>
   <style>
     body {
@@ -31,37 +31,32 @@
     }
 
     section {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       padding: 20px 15px;
     }
 
-    .gallery {
+    .scroll-gallery {
       display: flex;
-      flex-wrap: wrap;
+      overflow-x: auto;
       gap: 15px;
-      justify-content: center;
+      padding-bottom: 10px;
+      scrollbar-width: none;
+    }
+
+    .scroll-gallery::-webkit-scrollbar {
+      display: none;
     }
 
     .card {
       position: relative;
-      width: 200px;
+      min-width: 200px;
       height: 250px;
       background: #fff;
       border-radius: 20px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
       overflow: hidden;
-      transform: rotate(-3deg);
-      transition: transform 0.3s;
-    }
-
-    .card:nth-child(even) {
-      transform: rotate(3deg);
-    }
-
-    .card:hover {
-      transform: rotate(0deg) scale(1.05);
-      z-index: 2;
+      flex-shrink: 0;
     }
 
     .card img {
@@ -72,7 +67,8 @@
       border-radius: 20px;
     }
 
-    .card::before, .card::after {
+    .card::before,
+    .card::after {
       content: "💖";
       position: absolute;
       font-size: 1.2em;
@@ -198,14 +194,6 @@
       .letter {
         font-size: 1em;
       }
-      .gallery {
-        flex-direction: column;
-        align-items: center;
-      }
-      .card {
-        width: 90%;
-        height: auto;
-      }
     }
   </style>
 </head>
@@ -226,11 +214,22 @@
 
 <section>
   <h2>📸 Our Memories</h2>
-  <div class="gallery">
-    <div class="card"><img src="https://placekitten.com/300/300" alt="Photo 1"></div>
-    <div class="card"><img src="https://placekitten.com/301/301" alt="Photo 2"></div>
-    <div class="card"><img src="https://placekitten.com/302/302" alt="Photo 3"></div>
-    <!-- Add more .card elements with your own images -->
+  <div class="scroll-gallery">
+    <!-- Replace these URLs with your own 14 images -->
+    <div class="card"><img src="https://placekitten.com/300/300" alt="1"></div>
+    <div class="card"><img src="https://placekitten.com/301/300" alt="2"></div>
+    <div class="card"><img src="https://placekitten.com/302/300" alt="3"></div>
+    <div class="card"><img src="https://placekitten.com/303/300" alt="4"></div>
+    <div class="card"><img src="https://placekitten.com/304/300" alt="5"></div>
+    <div class="card"><img src="https://placekitten.com/305/300" alt="6"></div>
+    <div class="card"><img src="https://placekitten.com/306/300" alt="7"></div>
+    <div class="card"><img src="https://placekitten.com/307/300" alt="8"></div>
+    <div class="card"><img src="https://placekitten.com/308/300" alt="9"></div>
+    <div class="card"><img src="https://placekitten.com/309/300" alt="10"></div>
+    <div class="card"><img src="https://placekitten.com/310/300" alt="11"></div>
+    <div class="card"><img src="https://placekitten.com/311/300" alt="12"></div>
+    <div class="card"><img src="https://placekitten.com/312/300" alt="13"></div>
+    <div class="card"><img src="https://placekitten.com/313/300" alt="14"></div>
   </div>
 </section>
 
