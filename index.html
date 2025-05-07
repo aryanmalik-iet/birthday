@@ -2,390 +2,218 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Happy Birthday, My Love 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Surprise for My GF</title>
   <style>
+    /* Global Styles */
     body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
       margin: 0;
-      font-family: 'Comic Sans MS', cursive;
-      background: #fff0f5;
-      color: #333;
-      overflow-x: hidden;
+      padding: 0;
     }
 
     header {
       text-align: center;
-      padding: 60px 20px 30px;
-      background: linear-gradient(#ffe4e1, #fff0f5);
+      padding: 50px 0;
+      background-color: #ff69b4;
+      color: white;
     }
 
     h1 {
-      font-size: 2.5em;
-      color: #ff69b4;
-      animation: pop 1s ease-out forwards;
+      font-size: 3em;
+      margin: 0;
     }
 
-    @keyframes pop {
-      0% { transform: scale(0.5); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
+    p {
+      font-size: 1.5em;
     }
-    
-.card-container {
-  display: flex;
-  overflow-x: scroll;
-  padding: 20px 0;
-  gap: 15px;
-  scroll-snap-type: x mandatory;
-  justify-content: center; /* Center the cards */
-}
 
-.card-wrapper {
-  display: flex;
-  gap: 15px;
-}
-
-.card {
-  width: 250px;
-  height: 250px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 15px;
-  position: relative;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  scroll-snap-align: center;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-.heart-top-left, .heart-bottom-right {
-  position: absolute;
-  font-size: 2em;
-  color: #ff69b4;
-  z-index: 1;
-}
-
-.heart-top-left {
-  top: 10px;
-  left: 10px;
-}
-
-.heart-bottom-right {
-  bottom: 10px;
-  right: 10px;
-}
-
-/* Mobile fix */
-@media (max-width: 600px) {
-  .card-container {
-    padding: 20px;
-    gap: 10px;
-    flex-wrap: nowrap; /* Prevent wrapping */
-    justify-content: space-evenly; /* Evenly space cards */
-  }
-
-  .card {
-    width: 180px; /* Adjust card size for mobile */
-    height: 180px;
-  }
-
-  .card-wrapper {
-    flex-wrap: nowrap; /* Prevent cards from stacking on top of each other */
-  }
-}
-
-
+    /* Our Memories Section */
     section {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px 15px;
+      text-align: center;
+      padding: 40px 10px;
     }
 
-    .gallery {
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .card-container {
       display: flex;
-      flex-wrap: wrap;
+      overflow-x: scroll;
+      padding: 20px 0;
       gap: 15px;
+      scroll-snap-type: x mandatory;
       justify-content: center;
     }
 
-    .card {
-      position: relative;
-      width: 200px;
-      height: 250px;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      overflow: hidden;
-      transform: rotate(-3deg);
-      transition: transform 0.3s;
+    .card-wrapper {
+      display: flex;
+      gap: 15px;
     }
 
-    .card:nth-child(even) {
-      transform: rotate(3deg);
+    .card {
+      width: 250px;
+      height: 250px;
+      background-color: #f8f8f8;
+      border-radius: 15px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      scroll-snap-align: center;
+      transition: transform 0.3s ease;
     }
 
     .card:hover {
-      transform: rotate(0deg) scale(1.05);
-      z-index: 2;
+      transform: scale(1.05);
     }
 
     .card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border: 10px solid #ffccdd;
-      border-radius: 20px;
+      border-radius: 15px;
     }
 
-    .card::before, .card::after {
-      content: "💖";
+    .heart-top-left, .heart-bottom-right {
       position: absolute;
-      font-size: 1.2em;
+      font-size: 2em;
+      color: #ff69b4;
+      z-index: 1;
     }
 
-    .card::before {
+    .heart-top-left {
       top: 10px;
       left: 10px;
     }
 
-    .card::after {
+    .heart-bottom-right {
       bottom: 10px;
       right: 10px;
     }
 
-    .letter {
-      background: #fffaf0;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #ffb6c1;
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
-
-    .surprise {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .btn {
-      background: #ff69b4;
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      font-size: 1em;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .btn:hover {
-      background: #ff1493;
-    }
-
-    .gift {
-      display: none;
-      margin-top: 20px;
-      font-size: 1.5em;
-      color: #db7093;
-      animation: fadeIn 1s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 10px;
-      color: #999;
-      font-size: 0.9em;
-    }
-
-    .hearts {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .heart {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: #ff69b4;
-      transform: rotate(45deg);
-      animation: floatUp 8s linear infinite;
-    }
-
-    .heart::before,
-    .heart::after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: #ff69b4;
-      border-radius: 50%;
-    }
-
-    .heart::before {
-      top: -10px;
-      left: 0;
-    }
-
-    .heart::after {
-      left: -10px;
-      top: 0;
-    }
-
-    @keyframes floatUp {
-      0% {
-        transform: translateY(100vh) scale(0.6) rotate(45deg);
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh) scale(1) rotate(45deg);
-        opacity: 0;
-      }
-    }
-
+    /* Make it mobile-friendly */
     @media (max-width: 600px) {
-      h1 {
-        font-size: 2em;
+      .card-container {
+        gap: 10px;
+        padding: 20px;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
       }
-      .letter {
-        font-size: 1em;
-      }
-      .gallery {
-        flex-direction: column;
-        align-items: center;
-      }
+
       .card {
-        width: 90%;
-        height: auto;
+        width: 180px;
+        height: 180px;
+      }
+
+      .card-wrapper {
+        flex-wrap: nowrap;
       }
     }
   </style>
 </head>
 <body>
 
-<div class="hearts">
-  <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
-  <div class="heart" style="left: 25%; animation-delay: 2s;"></div>
-  <div class="heart" style="left: 45%; animation-delay: 4s;"></div>
-  <div class="heart" style="left: 65%; animation-delay: 1s;"></div>
-  <div class="heart" style="left: 85%; animation-delay: 3s;"></div>
-</div>
+  <!-- Header Section -->
+  <header>
+    <h1>Happy Birthday, My Love! 💖</h1>
+    <p>To the one who makes my life beautiful.</p>
+  </header>
 
-<header>
-  <h1>🎉 Happy Birthday, My Love! 🎂</h1>
-  <p>You make my world brighter every day 💖</p>
-</header>
-
-<section>
-  <h2>📸 Our Memories</h2>
-  <div class="card-container">
-    <div class="card-wrapper">
-      <div class="card" style="background-image: url('https://placekitten.com/300/300');">
-        <div class="heart-top-left">❤️</div>
-        <div class="heart-bottom-right">❤️</div>
-      </div>
-      <div class="card" style="background-image: url('https://placekitten.com/301/301');">
-        <div class="heart-top-left">❤️</div>
-        <div class="heart-bottom-right">❤️</div>
-      </div>
-      <div class="card" style="background-image: url('https://placekitten.com/302/302');">
-        <div class="heart-top-left">❤️</div>
-        <div class="heart-bottom-right">❤️</div>
-      </div>
-      <div class="card" style="background-image: url('https://placekitten.com/303/303');">
-        <div class="heart-top-left">❤️</div>
-        <div class="heart-bottom-right">❤️</div>
-      </div>
-      <div class="card" style="background-image: url('https://placekitten.com/304/304');">
-        <div class="heart-top-left">❤️</div>
-        <div class="heart-bottom-right">❤️</div>
-      </div>
-      <div class="card" style="background-image: url('https://placekitten.com/305/305');">
-        <div class="heart-top-left">❤️</div>
-        <div class="heart-bottom-right">❤️</div>
-      </div>
-      <div class="card" style="background-image: url('https://placekitten.com/306/306');">
-        <div class="heart-top-left">❤️</div>
-        <div class="heart-bottom-right">❤️</div>
-      </div>
-      <div class="card" style="background-image: url('https://placekitten.com/307/307');">
-        <div class="heart-top-left">❤️</div>
-        <div class="heart-bottom-right">❤️</div>
-      </div>
-      <div class="card" style="background-image: url('https://placekitten.com/308/308');">
-        <div class="heart-top-left">❤️</div>
-        <div class="heart-bottom-right">❤️</div>
-      </div>
-      <div class="card" style="background-image: url('https://placekitten.com/309/309');">
-        <div class="heart-top-left">❤️</div>
-        <div class="heart-bottom-right">❤️</div>
-      </div>
-      <div class="card" style="background-image: url('https://placekitten.com/310/310');">
-        <div class="heart-top-left">❤️</div>
-        <div class="heart-bottom-right">❤️</div>
-      </div>
-      <div class="card" style="background-image: url('https://placekitten.com/311/311');">
-        <div class="heart-top-left">❤️</div>
-        <div class="heart-bottom-right">❤️</div>
-      </div>
-      <div class="card" style="background-image: url('https://placekitten.com/312/312');">
-        <div class="heart-top-left">❤️</div>
-        <div class="heart-bottom-right">❤️</div>
-      </div>
-      <div class="card" style="background-image: url('https://placekitten.com/313/313');">
-        <div class="heart-top-left">❤️</div>
-        <div class="heart-bottom-right">❤️</div>
+  <!-- Our Memories Section -->
+  <section>
+    <h2>📸 Our Memories</h2>
+    <div class="card-container">
+      <div class="card-wrapper">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="heart-top-left">❤️</div>
+          <div class="heart-bottom-right">❤️</div>
+          <img src="https://placekitten.com/300/300" alt="Memory 1" />
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="heart-top-left">❤️</div>
+          <div class="heart-bottom-right">❤️</div>
+          <img src="https://placekitten.com/301/301" alt="Memory 2" />
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="heart-top-left">❤️</div>
+          <div class="heart-bottom-right">❤️</div>
+          <img src="https://placekitten.com/302/302" alt="Memory 3" />
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+          <div class="heart-top-left">❤️</div>
+          <div class="heart-bottom-right">❤️</div>
+          <img src="https://placekitten.com/303/303" alt="Memory 4" />
+        </div>
+        <!-- Card 5 -->
+        <div class="card">
+          <div class="heart-top-left">❤️</div>
+          <div class="heart-bottom-right">❤️</div>
+          <img src="https://placekitten.com/304/304" alt="Memory 5" />
+        </div>
+        <!-- Card 6 -->
+        <div class="card">
+          <div class="heart-top-left">❤️</div>
+          <div class="heart-bottom-right">❤️</div>
+          <img src="https://placekitten.com/305/305" alt="Memory 6" />
+        </div>
+        <!-- Card 7 -->
+        <div class="card">
+          <div class="heart-top-left">❤️</div>
+          <div class="heart-bottom-right">❤️</div>
+          <img src="https://placekitten.com/306/306" alt="Memory 7" />
+        </div>
+        <!-- Card 8 -->
+        <div class="card">
+          <div class="heart-top-left">❤️</div>
+          <div class="heart-bottom-right">❤️</div>
+          <img src="https://placekitten.com/307/307" alt="Memory 8" />
+        </div>
+        <!-- Card 9 -->
+        <div class="card">
+          <div class="heart-top-left">❤️</div>
+          <div class="heart-bottom-right">❤️</div>
+          <img src="https://placekitten.com/308/308" alt="Memory 9" />
+        </div>
+        <!-- Card 10 -->
+        <div class="card">
+          <div class="heart-top-left">❤️</div>
+          <div class="heart-bottom-right">❤️</div>
+          <img src="https://placekitten.com/309/309" alt="Memory 10" />
+        </div>
+        <!-- Card 11 -->
+        <div class="card">
+          <div class="heart-top-left">❤️</div>
+          <div class="heart-bottom-right">❤️</div>
+          <img src="https://placekitten.com/310/310" alt="Memory 11" />
+        </div>
+        <!-- Card 12 -->
+        <div class="card">
+          <div class="heart-top-left">❤️</div>
+          <div class="heart-bottom-right">❤️</div>
+          <img src="https://placekitten.com/311/311" alt="Memory 12" />
+        </div>
+        <!-- Card 13 -->
+        <div class="card">
+          <div class="heart-top-left">❤️</div>
+          <div class="heart-bottom-right">❤️</div>
+          <img src="https://placekitten.com/312/312" alt="Memory 13" />
+        </div>
+        <!-- Card 14 -->
+        <div class="card">
+          <div class="heart-top-left">❤️</div>
+          <div class="heart-bottom-right">❤️</div>
+          <img src="https://placekitten.com/313/313" alt="Memory 14" />
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-
-<section>
-  <h2>💌 Its for u cutuu</h2>
-  <div class="letter">
-    <p>Dear Prachi Madam </p>
-    <p>
-On our veryyyy veryy special day..... i just want u too know that i loveee u i loveee u a lot 💌💌💌💌 nd meriiiiii jaaannn.... merii cutieee batoootieeeee 😁😁😁😁😁..... Happpyyyyy Birthday meriii jaaannnn
-....... I love u baby i really loveee u.... u are my jaaan ✨✨🥳🎉🎉🍰..... my cutieeee..my wifeyyy baby i loveeee u ..... nd ik this time u are thoda sa off sa not so exited sa logo s chupaa huaa sa but baby u can celebrate everything with me dekh sabse chup ske merse to ni naaa 😁😁😁... to merko to partyy deni padegiii 🥳🥳🥳🥳🥳.... yeeeeeeeee nd bacchaa presan ni huaaa kartee nd i loveeeee u my cutieee .... nd veryy happy birthday...I wish u will get everything u wish for this year ... now u are officially 18...🫂🫂🫂... welcome to adult gang 😮‍💨😮‍💨😮‍💨😮‍💨.... nd finely twenty also .... nd also your third birthday with me baby .....we hope every next year to celebrate together let's try next year as well I am always with u my bacchaa... my cutieee 🫂🫂🫂🫂🫂... nd aaj ek dam khus rhna hai 🎉🎉🎉🎉 .... tu khus ho chahe na ho meri wifeyy ka birthday hai m to bhoot khus hu aaj terko bilkul daat ni padee jaa kyaa yaad rakhegi one concession day jo karna kar 😏😏😏😏... nd also if u want anything as your gifty can ask baby I will try my best to give that(vaise m kafi hu as a gift aa jata hu pack hoke 🫣🫣🫣🫣)...Yaarr i want to be with u celebrate with u 🥺🥺🥺🥺🥺... we will do it bacchaa we will surely do it.... I loveee u jaaan..... i lovee living every moment with u ...i feel so lucky to have u ...🥺🥺🥺🥺... u are my everything. nd sorry ik m strict rhu daat du...👉👈... but I just want u happy baby u are my cutieee naaa....👉👈🫣🫣🫣... so bas acche ache kaam kiya kar bas tu khuss rhaa kar ..... I LOVEEEEEE U ....ND HAPPPPYY BIRTHDAY AGAINNNN 🥳🥳🥳🥳😚🥳...mera to na dance karne ka man kr rha teree sath 😅😅😅.... I loveeeee u 💫💫💫....
-    </p>
-    <p>
-      Happy birthday, my sunshine.
-    </p>
-    <p>With all my love, <br><strong>Yours Hubby Dubby</strong></p>
-  </div>
-</section>
-
-<section class="surprise">
-  <h2>Tap it Babyyyyy</h2>
-  <button class="btn" onclick="revealGift()">Click me</button>
-  <div class="gift" id="giftText">💖 You are my greatest gift. I love you forever 💖</div>
-</section>
-
-<footer>
-  Made with ❤️ by [Your Name]
-</footer>
-
-<script>
-  function revealGift() {
-    document.getElementById("giftText").style.display = "block";
-  }
-</script>
+  </section>
 
 </body>
 </html>
