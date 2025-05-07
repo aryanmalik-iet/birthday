@@ -36,6 +36,7 @@
   padding: 20px 0;
   gap: 15px;
   scroll-snap-type: x mandatory;
+  justify-content: center; /* Center the cards */
 }
 
 .card-wrapper {
@@ -76,16 +77,25 @@
   right: 10px;
 }
 
-/* Add responsiveness */
+/* Mobile fix */
 @media (max-width: 600px) {
-  .card {
-    width: 200px;
-    height: 200px;
-  }
   .card-container {
+    padding: 20px;
     gap: 10px;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: space-evenly; /* Evenly space cards */
+  }
+
+  .card {
+    width: 180px; /* Adjust card size for mobile */
+    height: 180px;
+  }
+
+  .card-wrapper {
+    flex-wrap: nowrap; /* Prevent cards from stacking on top of each other */
   }
 }
+
 
     section {
       max-width: 800px;
